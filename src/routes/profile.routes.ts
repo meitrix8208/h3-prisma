@@ -8,10 +8,10 @@ import {
 } from "../controllers/profile.controller.ts";
 const profileRouter = createRouter();
 
-profileRouter.get("/profiles/get", getProfiles)
-  .get("/profiles/:id", getProfile)
-  .post("/profiles/post", createProfile)
-  .put("/profiles/:id", updateProfile)
-  .delete("/profiles/:id", deleteProfile);
+profileRouter.get("/", getProfiles)
+  .get("/:id", getProfile)
+  .post("/", createProfile)
+  .put("/:id", updateProfile)
+  .delete("/:id", deleteProfile);
 
 export { profileRouter };

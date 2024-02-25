@@ -8,10 +8,10 @@ import {
 } from "../controllers/post.controller.ts";
 const postRouter = createRouter();
 
-postRouter.get("/posts/get", getPosts)
-  .get("/posts/:id", getPost)
-  .post("/posts/post", createPost)
-  .put("/posts/:id", updatePost)
-  .delete("/posts/:id", deletePost);
+postRouter.get("/", getPosts)
+  .get("/:id", getPost)
+  .post("/", createPost)
+  .put("/:id", updatePost)
+  .delete("/:id", deletePost);
 
 export { postRouter };

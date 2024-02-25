@@ -1,18 +1,23 @@
-import { createApp, defineRequestMiddleware, eventHandler, useBase } from "h3";
-import { router } from "./routes/index.routes";
+import { createApp, eventHandler, useBase } from "h3";
 import morgan from "morgan";
+import { userRouter } from "./routes/user.routes";
+import { profileRouter } from "./routes/profile.routes";
+import { postRouter } from "./routes/post.routes";
 export const app = createApp();
 
 const logger = morgan("dev");
 
-app.use(defineRequestMiddleware(eventHandler((event) => {
-  const { req, res } = event.node;
+app.use(
+  eventHandler((event) => {
+    const { req, res } = event.node;
+    logger(req, res, (error) => {
+      if (error) {
+        console.error(error);
+      }
+    });
+  })
+);
 
-  logger(req, res, (error) => {
-    if (error) {
-      console.error(error);
-    }
-  });
-})));
-
-app.use( router.handler);
+app.use(useBase("/api/users", userRouter.handler));
+app.use(useBase("/api/profiles", profileRouter.handler));
+app.use(useBase("/api/posts", postRouter.handler));

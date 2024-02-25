@@ -5,15 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "listhen --port 4935 -w ./src/index.ts"
+    "dev": "listhen --port 4935 -w ./src/index.ts",
+    "generate": "prisma generate"
   },
   "license": "MIT",
   "dependencies": {
-    "@prisma/client": "5.9.1",
+    "@prisma/client": "5.10.2",
     "@types/morgan": "1.9.9",
-    "h3": "1.10.1",
+    "h3": "1.10.2",
     "listhen": "1.6.0",
     "morgan": "1.10.0",
-    "prisma": "5.9.1"
+    "prisma": "5.10.2"
   }
 }

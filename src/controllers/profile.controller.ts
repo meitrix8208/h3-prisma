@@ -1,4 +1,4 @@
-import { prisma } from "../services/db";
+import { prisma } from "../services/db.service";
 import { createError, eventHandler, getRouterParams, readBody } from "h3";
 
 //!-----------profile----------------

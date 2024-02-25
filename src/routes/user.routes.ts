@@ -8,10 +8,10 @@ import {
 } from "../controllers/user.controller.ts";
 const userRouter = createRouter();
 
-userRouter.get("/users/get", getUsers)
-  .get("/users/:id", getUser)
-  .post("/users/post", createUser)
-  .put("/users/:id", updateUser)
-  .delete("/users/:id", deleteUser);
+userRouter.get("/", getUsers)
+  .get("/:id", getUser)
+  .post("/", createUser)
+  .put("/:id", updateUser)
+  .delete("/:id", deleteUser);
 
 export { userRouter };
