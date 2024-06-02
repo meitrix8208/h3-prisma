@@ -5,7 +5,7 @@ import { profileRouter } from "./profile.routes";
 
 const GlobalRouter = createRouter().get("/ls", eventHandler(() => {
   return { message: "Welcome to the API" };
-}))
+}));
 
 GlobalRouter.use("/users/*", useBase("/users", userRouter.handler));
 GlobalRouter.use("/posts/*", useBase("/posts", postRouter.handler));

@@ -16,7 +16,7 @@ app.use(
         console.error(error);
       }
     });
-  })
+  }),
 );
 
 // app.use("/api/**", useBase("/api", GlobalRouter.handler));

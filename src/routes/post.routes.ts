@@ -6,6 +6,7 @@ import {
   getPosts,
   updatePost,
 } from "../controllers/post.controller";
+
 const postRouter = createRouter();
 
 postRouter.get("/", getPosts)

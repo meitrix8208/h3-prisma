@@ -6,6 +6,7 @@ import {
   getUsers,
   updateUser,
 } from "../controllers/user.controller";
+
 const userRouter = createRouter();
 
 userRouter.get("/", getUsers)

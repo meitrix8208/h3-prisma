@@ -1,23 +1,29 @@
 {
   "name": "h3-prisma",
-  "version": "1.0.0",
-  "description": "an example of using h3 with prisma",
-  "main": "dist/index.mjs",
   "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.1.4",
+  "description": "an example of using h3 with prisma",
+  "license": "MIT",
+  "main": "dist/index.mjs",
   "scripts": {
     "dev": "listhen --port 4935 -w ./src/index.ts",
     "build": "tsc",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "generate": "prisma generate"
   },
-  "license": "MIT",
   "dependencies": {
     "@prisma/client": "5.14.0",
     "@types/morgan": "1.9.9",
     "h3": "1.11.1",
     "listhen": "1.7.2",
     "morgan": "1.10.0",
-    "prisma": "5.14.0",
-    "typescript": "5.4.5"
+    "prisma": "5.14.0"
   },
-  "packageManager": "pnpm@9.1.4"
+  "devDependencies": {
+    "@antfu/eslint-config": "2.20.0",
+    "eslint": "9.4.0",
+    "typescript": "5.4.5"
+  }
 }

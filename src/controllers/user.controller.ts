@@ -1,13 +1,13 @@
-import { prisma } from "../services/db.service";
 import {
   createError,
   eventHandler,
   getRouterParams,
   readBody,
 } from "h3";
+import { prisma } from "../services/db.service";
 
-//!-----------users----------------
-export const getUsers = eventHandler(async (event) => {
+// !-----------users----------------
+export const getUsers = eventHandler(async () => {
   const users = await prisma.user.findMany();
   return users;
 });

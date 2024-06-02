@@ -6,6 +6,7 @@ import {
   getProfiles,
   updateProfile,
 } from "../controllers/profile.controller";
+
 const profileRouter = createRouter();
 
 profileRouter.get("/", getProfiles)

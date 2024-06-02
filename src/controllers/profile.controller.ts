@@ -1,9 +1,9 @@
-import { prisma } from "../services/db.service";
 import { createError, eventHandler, getRouterParams, readBody } from "h3";
+import { prisma } from "../services/db.service";
 
-//!-----------profile----------------
+// !-----------profile----------------
 
-export const getProfiles = eventHandler(async (event) => {
+export const getProfiles = eventHandler(async () => {
   const profiles = await prisma.profile.findMany();
   return profiles;
 });
@@ -54,4 +54,3 @@ export const deleteProfile = eventHandler(async (event) => {
   });
   return profile;
 });
-
