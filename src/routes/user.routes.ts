@@ -5,7 +5,7 @@ import {
   getUser,
   getUsers,
   updateUser,
-} from "../controllers/user.controller.ts";
+} from "../controllers/user.controller";
 const userRouter = createRouter();
 
 userRouter.get("/", getUsers)

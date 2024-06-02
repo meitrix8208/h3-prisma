@@ -1,13 +1,14 @@
-import { createRouter, useBase } from "h3";
-
+import { createRouter, eventHandler, useBase } from "h3";
 import { userRouter } from "./user.routes";
 import { postRouter } from "./post.routes";
 import { profileRouter } from "./profile.routes";
 
-const newRouter = createRouter();
+const GlobalRouter = createRouter().get("/ls", eventHandler(() => {
+  return { message: "Welcome to the API" };
+}))
 
-newRouter.use("/users/**", useBase("/users", userRouter.handler));
-newRouter.use("/posts/**", postRouter.handler);
-newRouter.use("/profiles/**", profileRouter.handler);
+GlobalRouter.use("/users/*", useBase("/users", userRouter.handler));
+GlobalRouter.use("/posts/*", useBase("/posts", postRouter.handler));
+GlobalRouter.use("/profiles/*", useBase("/profiles", profileRouter.handler));
 
-export { newRouter };
+export { GlobalRouter };

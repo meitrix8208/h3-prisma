@@ -3,6 +3,7 @@ import morgan from "morgan";
 import { userRouter } from "./routes/user.routes";
 import { profileRouter } from "./routes/profile.routes";
 import { postRouter } from "./routes/post.routes";
+// import { GlobalRouter } from "./routes/index.routes";
 export const app = createApp();
 
 const logger = morgan("dev");
@@ -18,6 +19,7 @@ app.use(
   })
 );
 
+// app.use("/api/**", useBase("/api", GlobalRouter.handler));
 app.use(useBase("/api/users", userRouter.handler));
 app.use(useBase("/api/profiles", profileRouter.handler));
 app.use(useBase("/api/posts", postRouter.handler));

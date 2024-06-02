@@ -5,7 +5,7 @@ import {
   getPost,
   getPosts,
   updatePost,
-} from "../controllers/post.controller.ts";
+} from "../controllers/post.controller";
 const postRouter = createRouter();
 
 postRouter.get("/", getPosts)

@@ -5,7 +5,7 @@ import {
   getProfile,
   getProfiles,
   updateProfile,
-} from "../controllers/profile.controller.ts";
+} from "../controllers/profile.controller";
 const profileRouter = createRouter();
 
 profileRouter.get("/", getProfiles)
